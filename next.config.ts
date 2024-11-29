@@ -1,8 +1,20 @@
-import type { NextConfig } from "next";
+import withTM from "next-transpile-modules";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-  reactStrictMode: true,
+// Include all `rc-*` modules and related Ant Design packages requiring transpilation
+const transpileModules = [
+  "rc-pagination",
+  "rc-util",
+  "rc-picker",
+  "rc-input",
+  "rc-tree",
+  "rc-table",
+  "@ant-design/icons",
+  "@ant-design/icons-svg"
+];
+
+const nextConfig = {
+  reactStrictMode: true
 };
 
-export default nextConfig;
+// Apply transpilation
+export default withTM(transpileModules)(nextConfig);
