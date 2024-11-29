@@ -1,40 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Blog Post Web App
+
+This repository contains a blog post web app built using Next.js, TypeScript, Ant Design (antd), and Tailwind CSS. The app fetches data from the public API provided by [GoRest](https://gorest.co.in/).
+
+---
+
+## Features
+
+- **Next.js**: A React-based framework for building server-rendered and static web applications.
+- **TypeScript**: Strongly-typed programming language that builds on JavaScript.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **Ant Design (antd)**: UI library for pre-styled components.
+- **React Query**: Efficient data fetching and caching.
+- **Axios**: Simplified HTTP client for API interactions.
+
+---
+
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (version 16 or later recommended)
+- npm or [Yarn](https://yarnpkg.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+---
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to set up and run the project locally:
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+$ git clone https://github.com/iqbalr3000/blog-post.git
+$ cd blog-post
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+# Using npm
+$ npm install
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# OR using Yarn
+$ yarn install
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### 3. Run the Development Server
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Using npm
+$ npm run dev
 
-## Learn More
+# OR using Yarn
+$ yarn dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+The development server will be available at [http://localhost:3000](http://localhost:3000).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```plaintext
+.
+├── .next/          # Next.js build output
+├── cypress/        # Cypress end-to-end testing files
+├── node_modules/   # Installed dependencies
+├── public/         # Static assets (e.g., images, fonts)
+├── src/
+│   ├── api/        # API interaction logic (e.g., Axios setup)
+│   │   ├── axiosInstance.ts
+│   │   └── posts.ts
+│   ├── hooks/      # Custom React hooks
+│   │   ├── usePosts.ts
+│   │   └── withAuth.tsx
+│   ├── pages/      # Page routes for the application
+│   │   ├── post/
+│   │   ├── _app.tsx
+│   │   ├── _document.tsx
+│   │   └── index.tsx
+│   ├── styles/     # Global styles and Tailwind CSS configuration
+│   ├── types/      # TypeScript types and interfaces
+│   └── utils/      # Utility functions and helpers
+├── .env.local      # Environment variables (ignored in version control)
+├── cypress.config.ts  # Cypress configuration
+├── next-env.d.ts   # TypeScript types for Next.js
+├── next.config.js  # Next.js configuration
+├── package.json    # Project metadata and scripts
+├── tailwind.config.ts  # Tailwind CSS configuration
+├── tsconfig.json   # TypeScript configuration
+└── README.md       # Project documentation
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Scripts
+
+The following npm scripts are available:
+
+- **`dev`**: Starts the development server
+- **`build`**: Builds the application for production
+- **`start`**: Runs the production build
+- **`lint`**: Lints the codebase using ESLint
+
+---
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-name`).
+3. Commit your changes (`git commit -m 'Add feature'`).
+4. Push to the branch (`git push origin feature-name`).
+5. Open a Pull Request.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Acknowledgements
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Ant Design](https://ant.design/)
+- [React Query](https://react-query.tanstack.com/)
+- [Axios](https://axios-http.com/)
+- [GoRest API](https://gorest.co.in/)
